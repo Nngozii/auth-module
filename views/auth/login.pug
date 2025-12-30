@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Shop
+        link(rel="stylesheet", href="/css/shop.css")
+        link(rel="stylesheet", href="/css/addProduct.css")
+        link(rel="stylesheet", href="/css/form.css")
+    body 
+        include ../../includes/navigation.pug 
+
+        main 
+            if errorMessage && errorMessage.length
+                div.error(style="background-color: #f8d7da; color: #842029; border: 1px solid #f5c2c7; padding: 12px 16px;border-radius: 4px;margin-bottom: 16px;text-align: center;font-size: 14px;width:25rem;")= errorMessage[0]
+            form.pro-form(action="/auth/login", method="post") 
+                //.form-ctrl 
+                    label(for="name") Name
+                    input(type="text", name="name" id="name")
+                .form-ctrl 
+                    label(for="email") Email 
+                    input(type="text", name="email" id="email" value=oldInput.email)  
+                .form-ctrl 
+                    label(for="password") Password
+                    input(type="password", name="password" id="password" value=oldInput.password) 
+                input(type="hidden" name="returnPath" value=returnPath)
+                //.form-ctrl 
+                    label(for="description") Description 
+                    textarea(name="description", id="description", rows="5")      
+                button(type="submit") Login
+            div
+                a(href="/auth/reset" style="display:block; margin-top:12px; padding-left:34rem;") Reset Password 

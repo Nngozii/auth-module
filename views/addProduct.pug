@@ -1,0 +1,39 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Product
+        link(rel="stylesheet", href="/css/addProduct.css")
+    body 
+        header.main-header
+            nav.main-header-nav
+                ul.main-header__item-list
+                    li.main-header__item
+                        a(href="/") Shop 
+                    li.main-header__item
+                        a(href="/products") Products
+                    li.main-header__item
+                        a(href="/cart") Cart
+                    li.main-header__item
+                        a(href="/product") Add Products
+                    li.main-header__item
+                        a(href="/admin-product") Admin Products 
+
+        main  
+            form.pro-form(action="/products", method="post") 
+                .form-ctrl 
+                    label(for="title") Title 
+                    input(type="text", name="title" id="title")  
+                .form-ctrl 
+                    label(for="imageUrl") Image 
+                    input(type="text", name="imageUrl" id="imageUrl") 
+                .form-ctrl 
+                    label(for="price") Price 
+                    input(type="number", name="price" id="price")
+                .form-ctrl 
+                    label(for="description") Description 
+                    textarea(name="description", id="description", rows="5")      
+                button(type="submit") Add Product
+
+    

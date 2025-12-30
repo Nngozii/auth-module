@@ -1,0 +1,31 @@
+header.main-header
+    nav.main-header-nav
+        ul.main-header__item-list
+            li.main-header__item
+                a(href="/") Shop 
+            li.main-header__item
+                a(href="/products") Products
+            li.main-header__item
+                a(href="/cart") Cart
+            if isAuthenticated
+                li.main-header__item
+                    a(href="/product") Add Products
+                li.main-header__item
+                    a(href="/admin-product") Admin Products
+
+        ul.main-header__item-list
+            if isAuthenticated
+                div(style="display: flex; align-items: center; gap: 10px;")
+                    p(style=style="color: white; background-color: #7163a7; border: 2px solid white; border-radius: 50%; padding: 10px 15px; margin: 0; font-weight: bold; box-shadow: 0 0 8px rgba(255,255,255,0.6);") Welcome 
+                    li.main-header__item
+                        form(action="/auth/log-out" method="POST" style="margin:0; padding:0; display:inline;")
+                            //input(type="hidden", name="_csrf", value=csrfToken)
+                            button(type="submit" style="background:none; border:none; color:white; padding:0 10px; cursor:pointer; font:inherit; text-decoration:none;") Logout
+
+            else
+                li.main-header__item
+                    a(href="/auth/sign-up") Sign Up
+                li.main-header__item
+                    a(href=`/auth/login?returnPath=${currentPath}`) Login
+            
+        
