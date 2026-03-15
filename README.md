@@ -35,15 +35,12 @@ The goal of this project is to demonstrate **backend security fundamentals** and
 * **JWT (JSON Web Tokens)**
 * **bcrypt**
 
-     |
-
-
 ## Installation
 
 Clone the repository:
 
 ```
-
+git clone https://github.com/Nngozii/auth-module.git
 ```
 
 Install dependencies:
