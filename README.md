@@ -35,37 +35,15 @@ The goal of this project is to demonstrate **backend security fundamentals** and
 * **JWT (JSON Web Tokens)**
 * **bcrypt**
 
-## API Endpoints
+     |
 
-### Authentication
-
-| Method | Endpoint         | Description                 |
-| ------ | ---------------- | --------------------------- |
-| POST   | /api/auth/signup | Register a new user         |
-| POST   | /api/auth/login  | Login and receive JWT token |
-
-### Protected Routes
-
-| Method | Endpoint     | Description                       |
-| ------ | ------------ | --------------------------------- |
-| GET    | /api/profile | Access authenticated user profile |
-| GET    | /api/admin   | Admin-only route                  |
-
-## Authentication Flow
-
-1. User registers with email and password.
-2. Password is **hashed with bcrypt** before storing in the database.
-3. User logs in with credentials.
-4. Server validates credentials and generates a **JWT token**.
-5. Client sends the token in the **Authorization header**.
-6. Auth middleware verifies the token and allows access to protected routes.
 
 ## Installation
 
 Clone the repository:
 
 ```
-git clone https://github.com/yourusername/auth-api.git
+
 ```
 
 Install dependencies:
@@ -77,7 +55,7 @@ npm install
 Create a `.env` file:
 
 ```
-PORT=5000
+PORT=5000 // example
 MONGO_URI=your_mongodb_connection
 JWT_SECRET=your_secret_key
 ```
@@ -85,31 +63,9 @@ JWT_SECRET=your_secret_key
 Start the server:
 
 ```
-npm run dev
+npm start
 ```
 
-## Example Request
-
-Login request:
-
-```
-POST /api/auth/login
-```
-
-```
-{
-  "email": "user@example.com",
-  "password": "password123"
-}
-```
-
-Response:
-
-```
-{
-  "token": "jwt_token_here"
-}
-```
 
 ## Learning Goals
 
@@ -125,11 +81,5 @@ This project was built to better understand:
 
 * Refresh tokens
 * Email verification
-* Password reset functionality
-* Rate limiting
 * OAuth login (Google/GitHub)
-
-## License
-
-MIT
 
